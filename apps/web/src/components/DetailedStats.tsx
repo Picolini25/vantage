@@ -11,32 +11,32 @@ import {
 import type { UserProfile } from '@vantage/shared';
 
 // --- Formatters ---
-const formatPercent = (val: number | undefined, decimals = 1) => {
+function formatPercent(val: number | undefined, decimals = 1) {
   if (val === undefined || val === null) return '-';
   let num = val;
   // Normalize 0.x vs 100x
   if (num > 100) num = num / 100;
   if (num <= 1 && num > 0) num = num * 100;
   return `${num.toFixed(decimals)}%`;
-};
+}
 
-const getRawPercent = (val: number | undefined) => {
+function getRawPercent(val: number | undefined) {
   if (val === undefined || val === null) return 0;
   let num = val;
   if (num > 100) num = num / 100;
   if (num <= 1 && num > 0) num = num * 100;
   return num;
-};
+}
 
-const formatNumber = (val: number | undefined, decimals = 2) => {
+function formatNumber(val: number | undefined, decimals = 2) {
   if (val === undefined || val === null) return '-';
   return val.toFixed(decimals);
-};
+}
 
-const formatMs = (val: number | undefined) => {
+function formatMs(val: number | undefined) {
   if (val === undefined || val === null) return '-';
   return `${val.toFixed(0)}ms`;
-};
+}
 
 interface DetailedStatsProps {
   profile: UserProfile;

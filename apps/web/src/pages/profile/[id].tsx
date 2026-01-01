@@ -138,7 +138,11 @@ export default function ProfilePage() {
             <div className="lg:col-span-8 space-y-8">
               <ProfileCard profile={profile} />
               <DetailedStats profile={profile} />
-              <MatchHistory faceitMatches={profile.faceit?.matchHistory} leetifyStats={profile.leetify} />
+              <MatchHistory 
+                faceitMatches={profile.faceit?.matchHistory} 
+                leetifyStats={profile.leetify}
+                onRefresh={handleRefreshMatches}
+              />
             </div>
 
             <div className="lg:col-span-4 space-y-6">

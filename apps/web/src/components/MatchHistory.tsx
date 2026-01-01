@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from 'react';
-import { HiViewList } from 'react-icons/hi';
+import { HiViewList, HiRefresh } from 'react-icons/hi';
 import { LeetifyMatchCard, LeetifyRecentMatchCard, FaceitMatchCard } from './MatchCards';
 import MatchModal from './MatchModal';
 import type { MatchStats, LeetifyStats } from '@vantage/shared';
@@ -9,16 +9,18 @@ import type { MatchStats, LeetifyStats } from '@vantage/shared';
 interface MatchHistoryProps {
   faceitMatches?: MatchStats[];
   leetifyStats?: LeetifyStats;
+  onRefresh?: () => void;
 }
 
 type Source = 'all' | 'faceit' | 'leetify';
 const PER_PAGE = 10;
 
-export default function MatchHistory({ faceitMatches, leetifyStats }: MatchHistoryProps) {
+export default function MatchHistory({ faceitMatches, leetifyStats, onRefresh }: MatchHistoryProps) {
   const [source, setSource] = useState<Source>('all');
   const [page, setPage] = useState(1);
   const [modalData, setModalData] = useState<any>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const fetchFullMatchDetails = async (match: any, type: 'leetify' | 'faceit') => {
     if (type === 'faceit') {
@@ -99,9 +101,25 @@ export default function MatchHistory({ faceitMatches, leetifyStats }: MatchHisto
 
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold flex items-center gap-2">
-            <HiViewList className="text-zinc-500" /> Match History
-          </h2>
+          <div className="flex items-center gap-3">
+            <h2 className="text-lg font-bold flex items-center gap-2">
+              <HiViewList className="text-zinc-500" /> Match History
+            </h2>
+            {onRefresh && (
+              <button
+                onClick={async () => {
+                  setIsRefreshing(true);
+                  await onRefresh();
+                  setIsRefreshing(false);
+                }}
+                disabled={isRefreshing}
+                className="p-2 hover:bg-zinc-800 rounded-lg transition-colors text-muted-foreground hover:text-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                title="Refresh matches"
+              >
+                <HiRefresh className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+              </button>
+            )}
+          </div>
           
           <div className="flex gap-1 bg-secondary/50 p-1 rounded-lg">
             {['all', 'faceit', 'leetify'].map((s) => (
