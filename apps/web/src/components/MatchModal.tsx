@@ -104,8 +104,8 @@ function LeetifyTable({ match }: { match: any }) {
 
   return (
     <div className="space-y-6">
-      <CS2TeamCard team={{ players: t1, score: s1, won: s1 > s2 }} label="CT" color="blue" />
-      <CS2TeamCard team={{ players: t2, score: s2, won: s2 > s1 }} label="T" color="amber" />
+      <CS2TeamCard team={{ players: t1, score: s1, won: s1 > s2 }} label="Team 1" color="blue" />
+      <CS2TeamCard team={{ players: t2, score: s2, won: s2 > s1 }} label="Team 2" color="amber" />
     </div>
   );
 }
@@ -237,7 +237,7 @@ function CS2TeamCard({ team, label, color, isFaceit }: any) {
         <div className="flex items-center gap-3">
           <div className={`px-3 py-1 ${bgColor} rounded-md`}>
             <span className={`text-sm font-black ${textColor} uppercase tracking-wider`}>
-              {isFaceit ? label : `${label} SIDE`}
+              {label}
             </span>
           </div>
           <span className="text-xs text-muted-foreground">{team.players.length} Players</span>
