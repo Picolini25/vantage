@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  steamId64   String   @unique
+  steamId32   String?
+  vanityUrl   String?
+  
+  // Profile Data
+  username    String
+  avatar      String?
+  profileUrl  String?
+  
+  // Steam Data
+  accountCreated DateTime?
+  level       Int?
+  yearsOfService Int?
+  isPrime     Boolean @default(false)
+  isPrivate   Boolean @default(false)
+  
+  // Bans
+  vacBanned       Boolean @default(false)
+  gameBanned      Boolean @default(false)
+  daysSinceLastBan Int?
+  
+  // Inventory
+  inventoryValue  Float?
+  inventoryPrivate Boolean @default(false)
+  
+  // Stats cache
+  faceitElo       Int?
+  faceitLevel     Int?
+  premierRating   Int?
+  leetifyRating   Float?
+  
+  // Risk Factor
+  riskScore       Int?
+  riskFlags       Json?
+  lastCalculated  DateTime?
+  
+  // Metadata
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  lastLookup  DateTime @default(now())
+  lookupCount Int      @default(1)
+  
+  lookups     Lookup[]
+  matches     Match[]
+  
+  @@index([steamId64])
+  @@index([riskScore])
+  @@index([lastLookup])
+}
+
+model Lookup {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  ipAddress   String?
+  userAgent   String?
+  
+  createdAt   DateTime @default(now())
+  
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Match {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  platform        String   // faceit, premier, leetify
+  matchId         String
+  matchDate       DateTime
+  
+  kills           Int?
+  deaths          Int?
+  assists         Int?
+  headshots       Int?
+  
+  mapName         String?
+  won             Boolean?
+  
+  rawData         Json?
+  
+  createdAt       DateTime @default(now())
+  
+  @@unique([platform, matchId])
+  @@index([userId])
+  @@index([matchDate])
+}
+
+model Stats {
+  id              String   @id @default(cuid())
+  key             String   @unique // e.g., "total_searches"
+  value           BigInt   @default(0)
+  updatedAt       DateTime @updatedAt
+  
+  @@index([key])
+}
